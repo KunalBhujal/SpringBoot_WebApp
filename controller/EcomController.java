@@ -1,4 +1,4 @@
-package com.ecommerce.app.main;
+package com.ecommerce.app.controller;
 
 import java.util.List;
 
@@ -9,16 +9,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ecommerce.app.model.EcomEntity;
+import com.ecommerce.app.service.EcomService;
+
 
 @RequestMapping("/api")
 @RestController
-public class Ecom_controller {
+public class EcomController {
 	
 	@Autowired
-	private Ecom_service ecomservice;
+	private EcomService ecomservice;
 
 	@RequestMapping("/user")
-	public List<Ecom_entity> adminUser(){
+	public List<EcomEntity> adminUser(){
 		return ecomservice.adminUser();
 	}
 	
@@ -27,7 +30,7 @@ public class Ecom_controller {
 		return "You have signed-up successfully";
 	}
 	@RequestMapping(method = RequestMethod.POST, value = "/adduser")
-	public void addUsers(@RequestBody Ecom_entity userEntity) {
+	public void addUsers(@RequestBody EcomEntity userEntity) {
 		ecomservice.addUsers(userEntity);
 	}
 	/*

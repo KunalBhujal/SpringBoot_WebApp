@@ -1,4 +1,4 @@
-package com.ecommerce.app.main;
+package com.ecommerce.app.model;
 
 import jakarta.annotation.Generated;
 import jakarta.persistence.Entity;
@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "users")
-public class Ecom_entity {
+public class EcomEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,13 +22,13 @@ public class Ecom_entity {
 	//private String password;
 	
 	
-	public Ecom_entity() {
+	public EcomEntity() {
 		super();
 		
 	}
 
 
-	public Ecom_entity(String email, String first_name, String last_name, String type, String id) {
+	public EcomEntity(String email, String first_name, String last_name, String type, String id) {
 		super();
 		this.email = email;
 		this.first_name = first_name;

@@ -1,4 +1,4 @@
-package com.ecommerce.app.main;
+package com.ecommerce.app.service;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,11 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import com.ecommerce.app.model.EcomEntity;
+import com.ecommerce.app.repository.EcomRepository;
+
 @Service
-public class Ecom_service {
+public class EcomService {
 	
 	@Autowired
-	private Ecom_Repository ecomRepo;
+	private EcomRepository ecomRepo;
 	
 	
 //	private List<Ecom_entity> users = new ArrayList<>(Arrays.asList(
@@ -23,13 +26,13 @@ public class Ecom_service {
 //			new Ecom_productsEntity("Apple iphone 11", "iphone 11, 136 GB, Jet black", "700 $"),
 //			new Ecom_productsEntity("Samsung Galaxy A11", "Samsung Galaxy A11, 128 GB, Blue", "500 $")));
 
-	public List<Ecom_entity> adminUser() {
-		List<Ecom_entity> adminuser = new ArrayList<>();
+	public List<EcomEntity> adminUser() {
+		List<EcomEntity> adminuser = new ArrayList<>();
 		ecomRepo.findAll().forEach(adminuser::add);
 		return adminuser;
 	}
 
-	public void addUsers(Ecom_entity userEntity) {
+	public void addUsers(EcomEntity userEntity) {
 		ecomRepo.save(userEntity);
 		
 	}

@@ -1,6 +1,6 @@
-package com.ecommerce.app.main;
+package com.ecommerce.app.model;
 
-public class Ecom_productsEntity {
+public class EcomProductsEntity {
 	
 	private String name;
 	private String description;
@@ -8,14 +8,14 @@ public class Ecom_productsEntity {
 	
 	
 	
-	public Ecom_productsEntity() {
+	public EcomProductsEntity() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
 	
 	
-	public Ecom_productsEntity(String name, String description, String price) {
+	public EcomProductsEntity(String name, String description, String price) {
 		super();
 		this.name = name;
 		this.description = description;
